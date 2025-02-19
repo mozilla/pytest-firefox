@@ -2,9 +2,10 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """Contains tests for the main pytest-firefox fixture."""
+from pytest import Testdir
 
 
-def test_fixture(testdir):
+def test_fixture(testdir: Testdir) -> None:
     """Test for firefox fixture."""
     testdir.makepyfile("""
         import pytest
@@ -18,7 +19,7 @@ def test_fixture(testdir):
     assert result.ret == 0
 
 
-def test_notification(testdir):
+def test_notification(testdir: Testdir) -> None:
     """Test for notifications fixture atrribute setting."""
     testdir.makepyfile("""
         import pytest
