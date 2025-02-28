@@ -1,3 +1,5 @@
+"""Configuration file for Sphinx documentation."""
+
 # -*- coding: utf-8 -*-
 #
 # pytest-firefox documentation build configuration file, created by

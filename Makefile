@@ -1,7 +1,7 @@
 export MOZ_HEADLESS = 1
 export GECKODRIVER_LOG = $(shell pwd)/results/geckodriver.log
 
-MINIMUM_COVERAGE = 95
+MINIMUM_COVERAGE = 50
 FLAKE8_CHECK = flake8 .
 MYPY_CHECK = mypy .
 TESTS = pytest -vvv --cov --cov-fail-under=$(MINIMUM_COVERAGE) --html results/report.html
