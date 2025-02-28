@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytest-firefox"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["Benjamin Forehand Jr <bforehand@mozilla.com>", "Temidayo Azeez <temidayoazeez032@gmail.com>"]
 license = "MIT"
@@ -16,8 +16,11 @@ flake8-isort = "^6.1.1"
 pytest = "^8.3.3"
 pytest-cov = "^5.0.0"
 pytest-selenium = "^4.1.0"
-foxpuppet = "^1.0.5"
+foxpuppet = "^1.0.6"
 mypy = "^1.14.0"
+
+[tool.poetry.plugins.pytest11]
+firefox = "pytest_firefox.pytest_firefox"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -31,6 +34,10 @@ max-line-length = 90
 python_version = "3.12"
 ignore_missing_imports = true
 strict = true
+
+[tool.isort]
+known_first_party = ["foxpuppet"]
+skip = ["build"]
 
 [build-system]
 requires = ["poetry-core"]
